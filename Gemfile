@@ -12,6 +12,9 @@ gem "sprockets-rails"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
+# Use Devise to handle user accounts
+gem "devise"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma"
 
@@ -76,7 +79,7 @@ end
 gem "active_link_to"
 gem "appdev_support"
 gem "awesome_print"
-gem "devise"
+
 gem "dotenv"
 gem "faker"
 gem "htmlbeautifier"
