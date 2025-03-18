@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   #alternative
   # resources :users, only: :show
 
+  get ":username/liked" => "users#liked", as: :liked
+
   get "/:username" => "users#show", as: :user
 
 end
