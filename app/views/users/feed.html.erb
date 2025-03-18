@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-6 offset-3">
+    <h1><%= @user.username %></h1>
+
+    <%= render 'users/nav', user: @user %>
+    
+  </div>
+</div>
+
+<h2>Feed</h2>
+
+<% @user.feed.each do |photo| %>
+  <%= render 'photos/photo', photo: photo %>
+<% end %>
