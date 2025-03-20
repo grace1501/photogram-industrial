@@ -9,13 +9,7 @@
 
 <h2>Following</h2>
 
-<ul class="list-group">
-<% @user.leaders.each do |leader| %>
-  <li class="list-group-item">
-    <%= link_to leader.username, user_path(leader.username) %>
-  </li>
-<% end %>
-</ul>
+<%= render 'users/follow_list', follow_list: @user.leaders %>
 
 
 
