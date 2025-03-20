@@ -12,7 +12,7 @@
 <ul class="list-group">
 <% @user.followers.each do |follower| %>
   <li class="list-group-item">
-    <%= follower.username %>
+    <%= link_to follower.username, user_path(follower.username) %>
   </li>
 <% end %>
 </ul>
