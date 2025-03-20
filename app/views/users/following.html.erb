@@ -7,8 +7,10 @@
   </div>
 </div>
 
-<h2>Own photos</h2>
+<h2>Following</h2>
 
-<% @user.own_photos.each do |photo| %>
-  <%= render 'photos/photo', photo: photo %>
-<% end %>
+<%= render 'users/follow_list', follow_list: @user.leaders %>
+
+
+
+  

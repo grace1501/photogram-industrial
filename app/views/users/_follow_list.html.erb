@@ -1,0 +1,7 @@
+<ul class="list-group">
+<% follow_list.each do |follow| %>
+  <li class="list-group-item">
+    <%= link_to follow.username, user_path(follow.username) %>
+  </li>
+<% end %>
+</ul>
