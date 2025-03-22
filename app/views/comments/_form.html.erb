@@ -1,15 +1,43 @@
-
-<%= simple_form_for(@comment) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
+<!--This was auto-generated to scaffold, did not work-->
+<!---->
+<%#= simple_form_for(@comment) do |f| %>
+  <%#= f.error_notification %>
+  <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<!--
   <div class="form-inputs">
-    <%= f.association :author %>
-    <%= f.association :photo %>
-    <%= f.input :body %>
-  </div>
+    <%#= f.association :author %>-->
+    <%#= f.association :photo %>
+    <%#= f.input :body %>
+<!--  </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%#= f.button :submit %>-->
+<!--  </div>-->
+<%# end %>
+
+
+<!--This is form_with from the lesson-->
+
+<%= form_with(model: comment) do |form| %>
+  <% if comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+        <% comment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :photo_id %>
+
+  <div class="mb-3">
+    <%= form.text_area :body, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.submit class: "btn btn-outline-secondary btn-block" %>
   </div>
 <% end %>
