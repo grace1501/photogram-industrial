@@ -8,6 +8,8 @@
     <div class="col-md-6 offset-md-3">
       <div class="card">
         <%= image_tag photo.image, class: "card-img-top" %>
+        <!--Alternative-->
+        <%#= image_tag(photo.image.present? ? photo.image : "https://robohash.org/0", class: "card-img-top") %>
         <div class="card-body">
           <h5 class="card-title"><%= photo.owner.username %></h5>
           <p class="card-text"><%= photo.caption %></p>
@@ -15,9 +17,9 @@
         <ul class="list-group list-group-flush">
           <% photo.comments.each do |comment| %>
             <div class="d-flex">
-                <div class="flex-shrink-0">
-                  <img src="..." alt="...">
-                </div>
+                <!--<div class="flex-shrink-0">
+                  <img src="https://robohash.org/0" alt="default avatar">
+                </div>-->
                 <div class="flex-grow-1 ms-3">
                   <h5 class="mt-0"><%= comment.author.username %></h5>
                   <p><%= comment.body %></p>
